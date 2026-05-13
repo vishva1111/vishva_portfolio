@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishva Sonagara | Frontend Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <ul class="nav__list" id="navList">
+        <li><a href="#home" class="nav__link active">Home</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#experience" class="nav__link">Experience</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-btn" id="themeBtn" title="Toggle theme">
+          <i class="fas fa-sun" id="themeIcon"></i>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero section" id="home">
+    <div class="hero__bg">
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+    </div>
+    <div class="container hero__container">
+      <div class="hero__text">
+        <span class="hero__tag">👋 Welcome to my portfolio</span>
+        <h1 class="hero__name">Vishva <br><span class="text-orange">Sonagara</span></h1>
+        <div class="hero__role">
+          <span class="role-prefix">I build </span>
+          <span class="role-dynamic" id="roleText"></span><span class="role-cursor">_</span>
+        </div>
+        <p class="hero__bio">
+          Passionate Frontend Developer with 2+ years of experience crafting
+          responsive, high-performance web applications using React.js and modern
+          JavaScript. I turn complex ideas into clean, functional interfaces.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">View Projects <i class="fas fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn--ghost">Hire Me <i class="fas fa-paper-plane"></i></a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <strong>2+</strong>
+            <span>Years Exp.</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <strong>5+</strong>
+            <span>Projects</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <strong>10+</strong>
+            <span>Technologies</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__card-stack">
+          <div class="hero__avatar">
+            <div class="avatar__circle">
+              <span>VS</span>
+            </div>
+            <div class="avatar__ring"></div>
+            <div class="avatar__ring avatar__ring--2"></div>
+          </div>
+          <div class="tech-pill tech-pill--1"><i class="fab fa-react"></i> React.js</div>
+          <div class="tech-pill tech-pill--2"><i class="fab fa-js"></i> JavaScript</div>
+          <div class="tech-pill tech-pill--3"><i class="fas fa-code"></i> TypeScript</div>
+          <div class="tech-pill tech-pill--4"><i class="fas fa-layer-group"></i> Redux</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <a href="#about"><i class="fas fa-chevron-down"></i></a>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section section--alt" id="about">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">About Me</span>
+        <h2 class="section__title">Who I <span class="text-orange">Am</span></h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="about__grid">
+        <div class="about__left reveal">
+          <div class="about__img-box">
+            <div class="about__img-inner">VS</div>
+            <div class="about__img-badge">
+              <i class="fas fa-check-circle"></i> Available for Work
+            </div>
+          </div>
+        </div>
+        <div class="about__right reveal">
+          <h3 class="about__subtitle">Frontend Developer based in Ahmedabad, India</h3>
+          <p class="about__text">
+            I am a passionate and detail-oriented Frontend Developer with a strong foundation in
+            HTML, CSS, JavaScript, and modern frameworks like React.js. I specialize in building
+            responsive, user-friendly web applications with a focus on performance and clean code.
+          </p>
+          <p class="about__text">
+            I enjoy turning design ideas into functional interfaces and continuously learning new
+            technologies to enhance user experience. I've worked on state management using Context
+            API and Redux, integrated RESTful APIs, and implemented responsive designs.
+          </p>
+          <div class="about__details">
+            <div class="detail__item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <span class="detail__label">Email</span>
+                <span class="detail__value">vishvasonagara11@gmail.com</span>
+              </div>
+            </div>
+            <div class="detail__item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <span class="detail__label">Phone</span>
+                <span class="detail__value">+91 9924417699</span>
+              </div>
+            </div>
+            <div class="detail__item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <span class="detail__label">Location</span>
+                <span class="detail__value">Ahmedabad, India</span>
+              </div>
+            </div>
+            <div class="detail__item">
+              <i class="fab fa-linkedin"></i>
+              <div>
+                <span class="detail__label">LinkedIn</span>
+                <span class="detail__value">vishva-sonagara-623b48285</span>
+              </div>
+            </div>
+          </div>
+          <div class="about__actions">
+            <a href="mailto:vishvasonagara11@gmail.com" class="btn btn--primary">
+              <i class="fas fa-envelope"></i> Get In Touch
+            </a>
+            <a href="https://linkedin.com/in/vishva-sonagara-623b48285" target="_blank" class="btn btn--ghost">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Technical Skills</span>
+        <h2 class="section__title">My <span class="text-orange">Expertise</span></h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="skills__grid reveal">
+        <div class="skill__card">
+          <div class="skill__icon" style="background:linear-gradient(135deg,#e34c26,#f06529)"><i class="fab fa-html5"></i></div>
+          <div class="skill__info">
+            <div class="skill__top"><span class="skill__name">HTML5</span><span class="skill__pct">95%</span></div>
+            <div class="skill__bar"><div class="skill__fill" data-w="95"></div></div>
+          </div>
+        </div>
+        <div class="skill__card">
+          <div class="skill__icon" style="background:linear-gradient(135deg,#264de4,#2965f1)"><i class="fab fa-css3-alt"></i></div>
+          <div class="skill__info">
+            <div class="skill__top"><span class="skill__name">CSS3</span><span class="skill__pct">90%</span></div>
+            <div class="skill__bar"><div class="skill__fill" data-w="90"></div></div>
+          </div>
+        </div>
+        <div class="skill__card">
+          <div class="skill__icon" style="background:linear-gradient(135deg,#f0db4f,#c9a800)"><i class="fab fa-js"></i></div>
+          <div class="skill__info">
+            <div class="skill__top"><span class="skill__name">JavaScript</span><span class="skill__pct">88%</span></div>
+            <div class="skill__bar"><div class="skill__fill" data-w="88"></div></div>
+          </div>
+        </div>
+        <div class="skill__card">
+          <div class="skill__icon" style="background:linear-gradient(135deg,#61dafb,#21a1c4)"><i class="fab fa-react"></i></div>
+          <div class="skill__info">
+            <div class="skill__top"><span class="skill__name">React.js</span><span class="skill__pct">92%</span></div>
+            <div class="skill__bar"><div class="skill__fill" data-w="92"></div></div>
+          </div>
+        </div>
+        <div class="skill__card">
+          <div class="skill__icon" style="background:linear-gradient(135deg,#3178c6,#235a97)"><i class="fas fa-code"></i></div>
+          <div class="skill__info">
+            <div class="skill__top"><span class="skill__name">TypeScript</span><span class="skill__pct">80%</span></div>
+            <div class="skill__bar"><div class="skill__fill" data-w="80"></div></div>
+          </div>
+        </div>
+        <div class="skill__card">
+          <div class="skill__icon" style="background:linear-gradient(135deg,#764abc,#5a3a8a)"><i class="fas fa-layer-group"></i></div>
+          <div class="skill__info">
+            <div class="skill__top"><span class="skill__name">Redux</span><span class="skill__pct">82%</span></div>
+            <div class="skill__bar"><div class="skill__fill" data-w="82"></div></div>
+          </div>
+        </div>
+        <div class="skill__card">
+          <div class="skill__icon" style="background:linear-gradient(135deg,#7952b3,#5a3a8a)"><i class="fab fa-bootstrap"></i></div>
+          <div class="skill__info">
+            <div class="skill__top"><span class="skill__name">Bootstrap</span><span class="skill__pct">88%</span></div>
+            <div class="skill__bar"><div class="skill__fill" data-w="88"></div></div>
+          </div>
+        </div>
+        <div class="skill__card">
+          <div class="skill__icon" style="background:linear-gradient(135deg,#0081cb,#005a8e)"><i class="fas fa-palette"></i></div>
+          <div class="skill__info">
+            <div class="skill__top"><span class="skill__name">Material UI</span><span class="skill__pct">85%</span></div>
+            <div class="skill__bar"><div class="skill__fill" data-w="85"></div></div>
+          </div>
+        </div>
+        <div class="skill__card">
+          <div class="skill__icon" style="background:linear-gradient(135deg,#f05032,#c0392b)"><i class="fab fa-git-alt"></i></div>
+          <div class="skill__info">
+            <div class="skill__top"><span class="skill__name">Git & GitHub</span><span class="skill__pct">85%</span></div>
+            <div class="skill__bar"><div class="skill__fill" data-w="85"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="section section--alt" id="experience">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Work History</span>
+        <h2 class="section__title">My <span class="text-orange">Experience</span></h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="timeline reveal">
+        <div class="timeline__item">
+          <div class="timeline__marker">
+            <div class="timeline__dot"></div>
+            <div class="timeline__line"></div>
+          </div>
+          <div class="timeline__body">
+            <div class="exp__card">
+              <div class="exp__header">
+                <div class="exp__left">
+                  <span class="exp__badge exp__badge--current">Current</span>
+                  <h3 class="exp__role">Frontend Developer</h3>
+                  <p class="exp__company"><i class="fas fa-building"></i> Kriyan Infotech</p>
+                </div>
+                <div class="exp__right">
+                  <span class="exp__date"><i class="fas fa-calendar-alt"></i> Jul 2024 – Present</span>
+                  <span class="exp__loc"><i class="fas fa-map-marker-alt"></i> Ahmedabad, India</span>
+                </div>
+              </div>
+              <ul class="exp__points">
+                <li>Built and maintained scalable web applications using modern JavaScript (ES6+), React Hooks, and component-based architecture.</li>
+                <li>Worked on state management using Context API and Redux, integrated RESTful APIs across multiple modules.</li>
+                <li>Optimized performance and implemented responsive designs to enhance user experience across all devices.</li>
+              </ul>
+              <div class="exp__tech">
+                <span>React.js</span><span>Redux</span><span>REST API</span><span>Material UI</span><span>ES6+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__marker">
+            <div class="timeline__dot"></div>
+          </div>
+          <div class="timeline__body">
+            <div class="exp__card">
+              <div class="exp__header">
+                <div class="exp__left">
+                  <span class="exp__badge exp__badge--intern">Internship</span>
+                  <h3 class="exp__role">React.js Intern</h3>
+                  <p class="exp__company"><i class="fas fa-building"></i> Quantumbot</p>
+                </div>
+                <div class="exp__right">
+                  <span class="exp__date"><i class="fas fa-calendar-alt"></i> Jan 2024 – Jul 2024</span>
+                  <span class="exp__loc"><i class="fas fa-map-marker-alt"></i> Ahmedabad, India</span>
+                </div>
+              </div>
+              <ul class="exp__points">
+                <li>Gained hands-on experience building dynamic web applications using React.js.</li>
+                <li>Developed reusable components, managed state using React Hooks, and integrated REST APIs for real-time data.</li>
+                <li>Collaborated with the team using Git and contributed to UI/UX improvements through responsive design.</li>
+              </ul>
+              <div class="exp__tech">
+                <span>React.js</span><span>React Hooks</span><span>REST API</span><span>Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Portfolio</span>
+        <h2 class="section__title">Featured <span class="text-orange">Projects</span></h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="projects__grid">
+
+        <div class="project__card reveal">
+          <div class="project__top">
+            <div class="project__num">01</div>
+            <span class="project__type">ERP System</span>
+          </div>
+          <h3 class="project__title">R Net – Construction ERP</h3>
+          <p class="project__desc">Scalable Construction ERP application managing end-to-end project operations with real-time data handling.</p>
+          <ul class="project__list">
+            <li>Built dynamic UI components using React.js, Material UI, and JavaScript ES6+</li>
+            <li>Integrated REST APIs for real-time data across multiple ERP modules</li>
+            <li>Optimized large data tables (1000+ records) with improved rendering</li>
+            <li>Implemented advanced form handling with React Hook Form</li>
+            <li>Handled GRN workflows, approval systems, and tax calculations</li>
+          </ul>
+          <div class="project__stack">
+            <span>React.js</span><span>Material UI</span><span>Redux</span><span>REST API</span><span>React Hook Form</span>
+          </div>
+        </div>
+
+        <div class="project__card reveal">
+          <div class="project__top">
+            <div class="project__num">02</div>
+            <span class="project__type">POS System</span>
+          </div>
+          <h3 class="project__title">Fossil Creek Liquor POS</h3>
+          <p class="project__desc">Full-featured Point of Sale system with third-party device integration and inventory management.</p>
+          <ul class="project__list">
+            <li>POS UI integration for simple and easy user experience</li>
+            <li>Integrated third-party APIs and physical devices like Pax Machine</li>
+            <li>Generated different order types: SO, TO, RO</li>
+            <li>Backend POS system built from scratch with scalable architecture</li>
+            <li>Inventory, product management and report generation</li>
+          </ul>
+          <div class="project__stack">
+            <span>React.js</span><span>REST API</span><span>Pax Machine</span><span>Inventory</span>
+          </div>
+        </div>
+
+        <div class="project__card reveal">
+          <div class="project__top">
+            <div class="project__num">03</div>
+            <span class="project__type">MLM Admin Panel</span>
+          </div>
+          <h3 class="project__title">Lexcru</h3>
+          <p class="project__desc">Water purifier admin panel with MLM reward system and product warranty tracking.</p>
+          <ul class="project__list">
+            <li>MLM reward UI integration for simple user experience</li>
+            <li>Integrated REST API for real-time data</li>
+            <li>Generated rewards/points on product scanning</li>
+            <li>Warranty check on scanned products</li>
+          </ul>
+          <div class="project__stack">
+            <span>React.js</span><span>REST API</span><span>MLM System</span><span>QR Scan</span>
+          </div>
+        </div>
+
+        <div class="project__card reveal">
+          <div class="project__top">
+            <div class="project__num">04</div>
+            <span class="project__type">Estimating Tool</span>
+          </div>
+          <h3 class="project__title">Benchmark Estimating Software</h3>
+          <p class="project__desc">Dedicated estimating software project built entirely in React for accurate project cost management.</p>
+          <ul class="project__list">
+            <li>Dedicated project developed in React</li>
+            <li>Built for accurate project cost estimation and management</li>
+          </ul>
+          <div class="project__stack">
+            <span>React.js</span><span>JavaScript</span>
+          </div>
+        </div>
+
+        <div class="project__card reveal">
+          <div class="project__top">
+            <div class="project__num">05</div>
+            <span class="project__type">Pharma Admin</span>
+          </div>
+          <h3 class="project__title">Bios Lab Pharma</h3>
+          <p class="project__desc">Pharma admin panel with REST API integration, report generation, and multi-format export.</p>
+          <ul class="project__list">
+            <li>Admin panel for simple and easy user experience</li>
+            <li>Integrated REST API and generated reports</li>
+            <li>Generated different types of printer, scanner, export</li>
+          </ul>
+          <div class="project__stack">
+            <span>React.js</span><span>REST API</span><span>Reports</span><span>Print/Export</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section class="section section--alt" id="education">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Academic Background</span>
+        <h2 class="section__title">My <span class="text-orange">Education</span></h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="edu__card reveal">
+        <div class="edu__icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="edu__body">
+          <div class="edu__top">
+            <div>
+              <h3 class="edu__degree">Bachelor of Technology – Information Technology</h3>
+              <p class="edu__uni"><i class="fas fa-university"></i> L J University, Ahmedabad</p>
+            </div>
+            <span class="edu__year">2021 – 2025</span>
+          </div>
+          <div class="edu__tags">
+            <span>Web Development</span><span>Data Structures</span><span>Algorithms</span><span>Database Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Get In Touch</span>
+        <h2 class="section__title">Contact <span class="text-orange">Me</span></h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="contact__wrapper">
+
+        <!-- ── Left: Info Panel ── -->
+        <div class="contact__info reveal">
+          <div class="contact__info-header">
+            <h3 class="contact__heading">Let's Work <span class="text-orange">Together</span></h3>
+            <p class="contact__text">
+              I'm currently open to new opportunities. Whether you have a project,
+              a question, or just want to say hi — feel free to reach out!
+            </p>
+            <div class="contact__availability">
+              <span class="contact__avail-dot"></span>
+              Available for freelance &amp; full-time roles
+            </div>
+          </div>
+
+          <div class="contact__cards">
+            <a href="mailto:vishvasonagara11@gmail.com" class="contact__card">
+              <div class="contact__card-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact__card-body">
+                <span class="contact__card-label">Email</span>
+                <span class="contact__card-val">vishvasonagara11@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+919924417699" class="contact__card">
+              <div class="contact__card-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact__card-body">
+                <span class="contact__card-label">Phone</span>
+                <span class="contact__card-val">+91 9924417699</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/vishva-sonagara-623b48285" target="_blank" class="contact__card">
+              <div class="contact__card-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div class="contact__card-body">
+                <span class="contact__card-label">LinkedIn</span>
+                <span class="contact__card-val">vishva-sonagara-623b48285</span>
+              </div>
+            </a>
+            <div class="contact__card">
+              <div class="contact__card-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact__card-body">
+                <span class="contact__card-label">Location</span>
+                <span class="contact__card-val">Ahmedabad, India</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__socials">
+            <span class="contact__socials-label">Find me on</span>
+            <div class="contact__socials-row">
+              <a href="mailto:vishvasonagara11@gmail.com" class="contact__social-btn" title="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="https://linkedin.com/in/vishva-sonagara-623b48285" target="_blank" class="contact__social-btn" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com" target="_blank" class="contact__social-btn" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Right: Form Card ── -->
+        <div class="contact__form-wrap reveal">
+          <div class="contact__form-card">
+            <div class="contact__form-header">
+              <h4 class="contact__form-title">Send a Message</h4>
+              <p class="contact__form-sub">I'll reply within 24 hours</p>
+            </div>
+            <form class="contact__form" id="contactForm">
+              <div class="form__row">
+                <div class="form__group">
+                  <label>Your Name</label>
+                  <input type="text" placeholder="John Doe" required />
+                </div>
+                <div class="form__group">
+                  <label>Your Email</label>
+                  <input type="email" placeholder="john@example.com" required />
+                </div>
+              </div>
+              <div class="form__group">
+                <label>Subject</label>
+                <input type="text" placeholder="Project Inquiry" required />
+              </div>
+              <div class="form__group">
+                <label>Message</label>
+                <textarea rows="5" placeholder="Tell me about your project..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">
+                Send Message <i class="fas fa-paper-plane"></i>
+              </button>
+              <p class="form__note" id="formNote"></p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2026 <span class="text-orange">Vishva Sonagara</span>. All rights reserved.</p>
+      <div class="footer__socials">
+        <a href="mailto:vishvasonagara11@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/vishva-sonagara-623b48285" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-top" id="backTop" title="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="script.js"></script>
+</body>
+</html>
