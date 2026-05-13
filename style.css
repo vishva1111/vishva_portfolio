@@ -122,6 +122,12 @@ img { max-width: 100%; display: block; }
 .nav {
   display: flex; align-items: center; justify-content: space-between;
 }
+.nav__logo {
+  font-size: 1.4rem; font-weight: 800; color: var(--orange);
+  letter-spacing: -0.5px; font-family: var(--font);
+  transition: var(--transition); flex-shrink: 0;
+}
+.nav__logo:hover { color: var(--orange-light); }
 .nav__list {
   display: flex; align-items: center; gap: 4px;
 }
