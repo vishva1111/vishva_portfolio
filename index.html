@@ -513,26 +513,52 @@
               <h4 class="contact__form-title">Send a Message</h4>
               <p class="contact__form-sub">I'll reply within 24 hours</p>
             </div>
-            <form class="contact__form" id="contactForm">
+            <form class="contact__form" id="contactForm" novalidate>
               <div class="form__row">
                 <div class="form__group">
-                  <label>Your Name</label>
-                  <input type="text" placeholder="John Doe" required />
+                  <label for="userName">Your Name</label>
+                  <input
+                    type="text"
+                    id="userName"
+                    name="from_name"
+                    placeholder="John Doe"
+                    required
+                    autocomplete="name"
+                  />
                 </div>
                 <div class="form__group">
-                  <label>Your Email</label>
-                  <input type="email" placeholder="john@example.com" required />
+                  <label for="userEmail">Your Email</label>
+                  <input
+                    type="email"
+                    id="userEmail"
+                    name="from_email"
+                    placeholder="john@example.com"
+                    required
+                    autocomplete="email"
+                  />
                 </div>
               </div>
               <div class="form__group">
-                <label>Subject</label>
-                <input type="text" placeholder="Project Inquiry" required />
+                <label for="userSubject">Subject</label>
+                <input
+                  type="text"
+                  id="userSubject"
+                  name="subject"
+                  placeholder="Project Inquiry"
+                  required
+                />
               </div>
               <div class="form__group">
-                <label>Message</label>
-                <textarea rows="5" placeholder="Tell me about your project..." required></textarea>
+                <label for="userMessage">Message</label>
+                <textarea
+                  id="userMessage"
+                  name="message"
+                  rows="5"
+                  placeholder="Tell me about your project..."
+                  required
+                ></textarea>
               </div>
-              <button type="submit" class="btn btn--primary btn--full">
+              <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
                 Send Message <i class="fas fa-paper-plane"></i>
               </button>
               <p class="form__note" id="formNote"></p>
@@ -561,6 +587,8 @@
   <!-- Back to Top -->
   <button class="back-top" id="backTop" title="Back to top"><i class="fas fa-chevron-up"></i></button>
 
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

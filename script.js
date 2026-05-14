@@ -121,22 +121,89 @@ if (skillsGrid) {
   skillObs.observe(skillsGrid);
 }
 
+// ===== EMAILJS INIT =====
+// Replace the three placeholder strings below with your real EmailJS credentials:
+//   PUBLIC_KEY  → Account > API Keys > Public Key
+//   SERVICE_ID  → Email Services > your service ID  (e.g. "service_xxxxxxx")
+//   TEMPLATE_ID → Email Templates > your template ID (e.g. "template_xxxxxxx")
+//
+// EmailJS template must contain these variables:
+//   {{from_name}}   – sender's name
+//   {{from_email}}  – sender's email
+//   {{subject}}     – email subject
+//   {{message}}     – message body
+//   {{to_email}}    – set to vishvasonagara12@gmail.com inside the template
+//
+// The EmailJS service should be connected to vishvacrypto@gmail.com (Gmail OAuth).
+
+const EMAILJS_PUBLIC_KEY  = 'tOI2VMhUUIgfcrCnP';   // ← replace
+const EMAILJS_SERVICE_ID  = 'service_7u2sm4a';   // ← replace
+const EMAILJS_TEMPLATE_ID = 'template_gf0l0ne';  // ← replace
+
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
 // ===== CONTACT FORM =====
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    const note = document.getElementById('formNote');
-    const btn = this.querySelector('button[type="submit"]');
+
+    const note    = document.getElementById('formNote');
+    const btn     = document.getElementById('submitBtn');
+
+    // ── Basic client-side validation ──
+    const name    = document.getElementById('userName').value.trim();
+    const email   = document.getElementById('userEmail').value.trim();
+    const subject = document.getElementById('userSubject').value.trim();
+    const message = document.getElementById('userMessage').value.trim();
+
+    if (!name || !email || !subject || !message) {
+      note.style.color = '#ff4d4d';
+      note.textContent = '⚠️ Please fill in all fields before sending.';
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      note.style.color = '#ff4d4d';
+      note.textContent = '⚠️ Please enter a valid email address.';
+      return;
+    }
+
+    // ── Sending state ──
     btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    setTimeout(() => {
-      note.textContent = '✅ Message sent! I\'ll get back to you soon.';
-      btn.disabled = false;
-      btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
-      this.reset();
-      setTimeout(() => { note.textContent = ''; }, 5000);
-    }, 1500);
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+    note.textContent = '';
+
+    // NOTE: to_email must be hardcoded inside your EmailJS template dashboard.
+    // Do NOT pass it as a dynamic param on the free plan — it will be rejected.
+    const templateParams = {
+      from_name:  name,
+      from_email: email,
+      reply_to:   email,
+      subject:    subject,
+      message:    message
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(() => {
+        note.style.color = '#22c55e';
+        note.textContent = '✅ Message sent! I\'ll get back to you within 24 hours.';
+        btn.disabled = false;
+        btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+        contactForm.reset();
+        setTimeout(() => { note.textContent = ''; }, 6000);
+      })
+      .catch((err) => {
+        // Show the real EmailJS error so it's easy to debug
+        const reason = (err && (err.text || err.message)) ? (err.text || err.message) : JSON.stringify(err);
+        console.error('EmailJS error:', reason);
+        note.style.color = '#ff4d4d';
+        note.textContent = '❌ Send failed: ' + reason;
+        btn.disabled = false;
+        btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+        setTimeout(() => { note.textContent = ''; }, 6000);
+      });
   });
 }
 
